@@ -1,3 +1,3 @@
 const importatePlis = require('./moduleVenom')
-importatePlis.creador('Hola', 'Hola, desde venom');
+importatePlis.creador('Hola, desde venom');
 
