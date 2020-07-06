@@ -1,5 +1,5 @@
 const venom = require('./moduleVenom')
-//const pruebas = require('./prueba')
+//const venom = require('./prueba')
 
 venom.creador();
 //venom.enviarMensaje(clienteID);
