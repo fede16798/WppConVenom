@@ -12,7 +12,7 @@ function creador() {
     /* Si recibo un mensaje lo comparo y respondo. message.from Es el id del chat al cual le debo responder. */
     client.onMessage((message) => {
       let mensajeRecibido = message.body.toLowerCase();
-      if (mensajeRecibido === "info" || mensajeRecibido === "informacion" || mensajeRecibido === "información") {
+      if (mensajeRecibido === "info" || mensajeRecibido === "información") {
         client.sendText(message.from, respuestaAutomatica);
         client.sendFile(message.from, "./terminos_y_condiciones_de_teleconsulta_1.pdf","terminos y consultas");
         client.sendFile(message.from, "./mail-attachment.googleusercontent.com.pdf","instructivo");
