@@ -3,7 +3,9 @@ Configurando una respuesta automática al recibo de un mensaje por WhatsApp
 
 1- Una vez ejecutado "npm test" se ejecuta el venom y genera un codigo QR con el que se tiene que escanear para iniciar sesión con whatsApp web desde el celular.
 Se genera una carpeta con un token para no tener que escanear el codigo cada vez que se ejecute la app.
-2- Apenas creada la sesión, se envia un mensaje al numero enviado por parametro
+
+2- Apenas creada la sesión, se envia un mensaje al numero enviado por parametro.
+
 3- Por cada mensaje recibido se le puede responder.
 Se pueden adjuntar imagenes, pdf, videos, links.
 
