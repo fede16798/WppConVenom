@@ -14,6 +14,8 @@ Asi por cada mensaje recibido no se envía la respuesta automática, sino que de
 
 #numeroAEnviar funciona como ID. El formato es el siguiente: 549(cod de area) + numero telefonico --> let numeroAEnviar = "5491112345678@c.us";
 
-#recibe por parametro el ID (numero) y un mensaje como String --> client.sendText(numeroAEnviar, primerMensaje);
+#Creo el cliente --> await venom.create();
 
-#para escuchar un mensaje --> client.onMessage((message) => { ... } 
+#recibe por parametro el ID (numero) y un mensaje como String --> await client.sendText(numeroAEnviar, primerMensaje);
+
+#para escuchar un mensaje --> client.onMessage((message) => { ... }
