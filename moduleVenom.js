@@ -2,25 +2,26 @@
 //import { create, Whatsapp } from 'venom-bot';
 const venom = require("venom-bot");
 //numeroAEnviar debe ser un string con el siguiente formato 'numero@c.us'
-let numeroAEnviar = null;
+let numeroAEnviar = "null";
 
-function creador() {
+async function creador() {
   //Creo la sesión en WhatsApp Web
-  venom.create().then((client) => {
+    const cliente = await venom.create();
     /* Apenas creada la sesión, se envía un mensaje al numeroAEnviar que es el ID de la persona. */
-    client.sendText(numeroAEnviar, primerMensaje);
-    /* Si recibo un mensaje lo comparo y respondo. message.from Es el id del chat al cual le debo responder. */
-    client.onMessage((message) => {
+    const enviarMensaje = await cliente.sendText(numeroAEnviar, primerMensaje);
+
+    console.log(enviarMensaje.toString())
+    /* Si recibo un mensaje lo comparo y respondo. message.from Es el ID del chat al cual le debo responder. */
+    cliente.onMessage((message) => {
       let mensajeRecibido = message.body.toLowerCase();
       if (mensajeRecibido === "info" || mensajeRecibido === "información") {
-        client.sendText(message.from, respuestaAutomatica);
-        client.sendFile(message.from, "./terminos_y_condiciones_de_teleconsulta_1.pdf","terminos y consultas");
-        client.sendFile(message.from, "./mail-attachment.googleusercontent.com.pdf","instructivo");
+        cliente.sendText(message.from, respuestaAutomatica);
+        cliente.sendFile(message.from, "./terminos_y_condiciones_de_teleconsulta_1.pdf","terminos y consultas");
+        cliente.sendFile(message.from, "./mail-attachment.googleusercontent.com.pdf","instructivo");
       } else { 
-        client.sendText(message.from, miRespuestaErronea);
+        cliente.sendText(message.from, miRespuestaErronea);
       }
     });
-  });
 }
 
 let respuestaAutomatica =
