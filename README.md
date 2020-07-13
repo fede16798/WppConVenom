@@ -13,7 +13,9 @@ Se podría verificar que cada chat tenga un token de tiempo, el cual puede recib
 Asi por cada mensaje recibido no se envía la respuesta automática, sino que debe pasar un tiempo entre respuesta y respuesta.
 
 #numeroAEnviar funciona como ID. El formato es el siguiente: 549(cod de area) + numero telefonico.
+
 let numeroAEnviar = "5491112345678@c.us";
 
 #recibe por parametro el ID (numero) y un mensaje como String.
+
 client.sendText(numeroAEnviar, primerMensaje);
